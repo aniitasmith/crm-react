@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const Formulario = ({client}) => {
   return (
     <>
@@ -12,6 +13,7 @@ const Formulario = ({client}) => {
           className='mt-2 block w-full p-3 bg-gray-50'
           placeholder='Client name'
           name='name'
+          defaultValue={client?.name}
         />
       </div>
       <div className='mb-4'>
@@ -25,6 +27,7 @@ const Formulario = ({client}) => {
           className='mt-2 block w-full p-3 bg-gray-50'
           placeholder='Client Company'
           name='company'
+          defaultValue={client?.company}
         />
       </div>
       <div className='mb-4'>
@@ -38,6 +41,8 @@ const Formulario = ({client}) => {
           className='mt-2 block w-full p-3 bg-gray-50'
           placeholder='Email del Cliente'
           name='email'
+          defaultValue={client?.email}
+
         />
       </div>
       <div className='mb-4'>
@@ -51,6 +56,8 @@ const Formulario = ({client}) => {
           className='mt-2 block w-full p-3 bg-gray-50'
           placeholder='Client Phone'
           name='phone'
+          defaultValue={client?.phone}
+
         />
       </div>
       <div className='mb-4'>
@@ -65,6 +72,7 @@ const Formulario = ({client}) => {
           className='mt-2 block w-full p-3 bg-gray-50 h-40 align-self'
           placeholder='Client Notes'
           name='notes'
+          defaultValue={client?.notes}
         />
       </div>
     </>
