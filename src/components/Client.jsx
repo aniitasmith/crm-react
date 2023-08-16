@@ -1,10 +1,18 @@
-import { useNavigate } from "react-router-dom"
-
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
+import { useNavigate, Form, redirect } from "react-router-dom"
+import { deleteClient  } from "../data/clients"
+
+export async function action ({params}) {
+  await deleteClient(params.clientId)
+  return redirect('/') 
+}
+
 function Client({client}) {
 
   const navigate = useNavigate()
   const { name, phone, email, company, id} = client
+  
   return (
     <tr className='border-b'>
       <td className='p-6 space-y-2'>
@@ -29,12 +37,26 @@ function Client({client}) {
         >
           Edit
         </button>
-        <button
-          type='button'
-          className='text-red-600 hover:text-red-700 uppercase font-bold text-xs'
+        <Form
+          method='post'
+          action={`/client/${id}/delete`}
+          onSubmit={(e) => {
+            if(!confirm('Do you want to delete this record?')){
+              e.preventDefault()
+            }
+
+          }}
         >
-          Delete
-        </button>
+          <button
+            type='submit'
+            className='text-red-600 hover:text-red-700 uppercase font-bold text-xs'
+          >
+            Delete
+          </button>
+
+
+        </Form>
+       
       </td>
     </tr>
   )
