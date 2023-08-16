@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useLoaderData } from 'react-router-dom'
-import { getClients } from '../data/clientes';
+import { getClients } from '../data/clients';
 import Client from '../components/Client';
 
 export function loader() {
