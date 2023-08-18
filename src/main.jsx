@@ -7,7 +7,7 @@ import NewClient, { action as newClientAction} from './pages/NewClient'
 import Index, { loader as clientsLoader } from './pages'
 import ErrorPage from './components/ErrorPage'
 import EditClient, { loader as editClientLoader, action as editClientAction } from './pages/EditClient'
-import { action as deleteClientAction } from './components/Client'
+import { action as deleteClientAction } from "./components/action"
 
 const router = createBrowserRouter([
   {

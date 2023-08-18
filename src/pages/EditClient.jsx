@@ -2,17 +2,17 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-control-regex */
 /* eslint-disable react-refresh/only-export-components */
-import { Form, useNavigate, useLoaderData, useActionData, redirect } from "react-router-dom"
-import { getClient, updateClient} from "../data/clients"
-import Formulario from "../components/Formulario"
-import Error from "../components/Error"
+import { Form, useNavigate, useLoaderData, useActionData, redirect } from 'react-router-dom'
+import { getClient, updateClient} from '../data/clients'
+import Formulario from '../components/Formulario'
+import Error from '../components/Error'
 
 export async function loader({params}) {
   const client = await getClient(params.clientId)
   if (Object.values(client).length === 0) {
     throw new Response ('', {
       status : 404,
-      statusText: "No results / Client not found"
+      statusText: 'No results / Client not found'
     })
   }
   return client

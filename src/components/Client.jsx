@@ -1,12 +1,5 @@
-/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { useNavigate, Form, redirect } from "react-router-dom"
-import { deleteClient  } from "../data/clients"
-
-export async function action ({params}) {
-  await deleteClient(params.clientId)
-  return redirect('/') 
-}
+import { useNavigate, Form } from 'react-router-dom'
 
 function Client({client}) {
 
