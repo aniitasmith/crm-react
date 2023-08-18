@@ -4,7 +4,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Layout from './components/Layout'
 import NewClient, { action as newClientAction} from './pages/NewClient'
-import Index, { loader as clientsLoader } from './pages/Index'
+import Index, { loader as clientsLoader } from './pages/Index.jsx'
 import ErrorPage from './components/ErrorPage'
 import EditClient, { loader as editClientLoader, action as editClientAction } from './pages/EditClient'
 import { action as deleteClientAction } from "./components/action"
